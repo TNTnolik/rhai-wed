@@ -1,0 +1,20 @@
+[build]
+target = "index.html"
+dist = "dist"
+filehash = true
+
+[serve]
+port = 8080
+open = true
+
+[clean]
+dist = "dist"
+
+[watch]
+watch = ["src", "assets", "style"]
+
+
+[[hooks]]
+stage = "post_build"
+command = "cp"
+command_arguments = ["dist/index.html", "dist/404.html"]
