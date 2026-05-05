@@ -6,6 +6,17 @@
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"
         />
-    </head>
-    <body></body>
+    <link rel="modulepreload" href="/rhai-wed/hsc-web-515fc3b12259452f.js" crossorigin="anonymous" integrity="sha384-z4vKtmtGxeLvmyTh9OUrVbxKNttrfgavB1p4T0UZLMlqOykfzcIVMRJ9AUVx1L4M"><link rel="preload" href="/rhai-wed/hsc-web-515fc3b12259452f_bg.wasm" crossorigin="anonymous" integrity="sha384-lAaUNBiRs5pPvSSW6hSMELdKJh5sZFA8VE/45COnnn5d1HqwlV7DVepq+k7cVc/s" as="fetch" type="application/wasm"></head>
+    <body>
+<script type="module">
+import init, * as bindings from '/rhai-wed/hsc-web-515fc3b12259452f.js';
+const wasm = await init({ module_or_path: '/rhai-wed/hsc-web-515fc3b12259452f_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
 </html>
